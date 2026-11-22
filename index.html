@@ -55,7 +55,7 @@ const fm=t=>t.replace(/^(UA|UR|U0)(?=[+-]|$)/,a=>lab(a));
 // 6 éléments de l'onglet Constitution : [id, libellé, colonne de départ] ; 1re partie en ligne 19, 2e partie en ligne 21
 const ELT=[['em1','Émetteur','R'],['em2','TVA','AD'],['re1','TVR','AP'],['re2','Récepteur','BB'],['re3','BP.BRTA2 - KFRI - VDR','BN'],['re4','Relais de voie','BZ']];
 const part=(cls,t,body)=>'<div class="part '+cls+'"><h3>'+t+'</h3>'+body+'</div>';
-const field=(k,t,ex)=>'<div class="row"><span class="l">'+t+'</span><input data-k="'+k+'" autocomplete="off"'+(ex||'')+'></div>';
+const field=(k,t,ex)=>'<div class="row"><span class="l">'+fm(t)+'</span><input data-k="'+k+'" autocomplete="off"'+(ex||'')+'></div>';
 const int=(k,t)=>field(k,t,' inputmode="numeric"');
 const num=(k,t,x)=>field(k,t,' inputmode="decimal"'+(x||''));
 const ck=(k,t)=>'<div class="row"><input type="checkbox" data-k="'+k+'"><span>'+t+'</span></div>';
